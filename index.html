@@ -89,11 +89,37 @@
             text-align: center;
         }
 
+        .hero > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero .accent {
+            text-align: center;
+        }
+
+        .hero h1 {
+            text-align: center;
+        }
+
+        .hero p {
+            text-align: center;
+        }
+
+        .hero .btn-call {
+            text-align: center;
+        }
+
         .hero-bg {
             position: absolute; top: 0; left: 0; width: 100%; height: 120%;
-            background: linear-gradient(rgba(26, 20, 35, 0.8), rgba(26, 20, 35, 0.92)),
-            url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=2000');
-            background-size: cover; background-position: center; z-index: 1;
+            background: linear-gradient(rgba(26, 20, 35, 0.75), rgba(26, 20, 35, 0.88)),
+            url('resource/hero-background.jpeg');
+            background-size: cover;
+            background-position: center center;
+            z-index: 1;
+            filter: contrast(1.05) saturate(1.05) brightness(0.95);
         }
 
         .hero h1 {
@@ -169,6 +195,22 @@
             h2 { font-size: 1.8rem !important; }
             .logo-track { width: calc(150px * 14); }
             .logo-item { width: 150px; }
+
+            .hero-bg {
+                background-size: cover;
+                background-position: center center;
+                opacity: 0.4;
+            }
+
+            .hero .section-content {
+                grid-template-columns: 1fr !important;
+            }
+
+            .hero .text-side {
+                padding-right: 0 !important;
+                text-align: center;
+            }
+
             @keyframes scroll {
                 0% { transform: translateX(0); }
                 100% { transform: translateX(calc(-150px * 7)); }
@@ -210,30 +252,16 @@
 
 <section class="hero active">
     <div class="hero-bg" id="hero-parallax"></div>
-    <div style="z-index: 2; text-align: center; color: white; padding: 0 5%;">
-        <span class="accent" style="color: white; opacity: 0.9;">Para Varejistas que Querem DOMINAR</span>
-        <h1 style="font-size: clamp(2.2rem, 6vw, 4.5rem); margin-bottom: 25px; line-height: 1.1;">
-            Sua Operação Digital está<br>DEIXANDO DINHEIRO NA MESA
+    <div style="z-index: 2; text-align: center; color: white; padding: 0 5%; max-width: 900px;">
+        <span class="accent" style="color: white; opacity: 0.9;">Consultoria Estratégica para Grandes Varejistas</span>
+        <h1 style="font-size: clamp(2rem, 4.5vw, 4rem); margin-bottom: 25px; line-height: 1.1;">
+            Multiplique seu Faturamento com a Metodologia que Transformou os Gigantes do Varejo
         </h1>
-        <p style="max-width: 900px; margin: 0 auto 45px; opacity: 0.95; font-size: 1.1rem; font-weight: 400;">
-            Enquanto seus concorrentes escalam com metodologia comprovada, você está perdendo milhões em conversão, retenção e otimização de processos. A consultoria que já transformou Indiana, Araujo, Havan, Colcci e outros gigantes agora está à sua disposição.
+        <p style="max-width: 600px; margin: 0 auto 35px; opacity: 0.95; font-size: 1.1rem; font-weight: 400; line-height: 1.6;">
+            A estratégia que levou Havan, Araujo, Indiana e Colcci ao TOP do varejo agora está disponível para você.
         </p>
-        <div style="margin-bottom: 35px; display: flex; gap: 30px; justify-content: center; flex-wrap: wrap;">
-            <div style="display: flex; align-items: center; gap: 8px;">
-                <span style="font-size: 1.5rem;">🔥</span>
-                <span style="font-size: 0.9rem;"><strong>+50% Conversão</strong> em 3 meses</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 8px;">
-                <span style="font-size: 1.5rem;">🏆</span>
-                <span style="font-size: 0.9rem;"><strong>2x ABCOMM</strong> - Top do País</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 8px;">
-                <span style="font-size: 1.5rem;">💰</span>
-                <span style="font-size: 0.9rem;"><strong>Multi-milhões</strong> em ROI</span>
-            </div>
-        </div>
-        <a href="#contato" class="btn-call">QUERO DOMINAR MEU MERCADO</a>
-        <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.7;">Apenas para empresas faturando R$50M+ por ano</p>
+        <a href="#contato" class="btn-call" style="padding: 18px 45px; font-size: 0.9rem;">QUERO UM DIAGNÓSTICO GRATUITO</a>
+        <p style="margin-top: 20px; font-size: 0.75rem; opacity: 0.65;">Empresas faturando R$50M+ por ano • Vagas limitadas</p>
     </div>
 </section>
 
@@ -378,7 +406,10 @@
         const scroll = window.pageYOffset;
         const parallax = document.getElementById('hero-parallax');
         const nav = document.getElementById('main-nav');
-        if (parallax) parallax.style.transform = `translateY(${scroll * 0.5}px)`;
+        if (parallax) {
+            parallax.style.transform = `translateY(${scroll * 0.4}px)`;
+            parallax.style.filter = `brightness(${0.95 - scroll * 0.0003})`;
+        }
         if (scroll > 100) nav.classList.add('scrolled');
         else nav.classList.remove('scrolled');
     });
