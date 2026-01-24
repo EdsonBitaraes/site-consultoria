@@ -43,8 +43,28 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            mix-blend-mode: difference;
             font-weight: 600; letter-spacing: 4px; font-size: 1.2rem;
-            color: var(--white); text-decoration: none; mix-blend-mode: difference;
+            color: var(--white);
+        }
+
+        .logo-img {
+            height: 169px;
+            width: auto;
+            transition: var(--transition);
+            filter: brightness(0) invert(1);
+            margin: 0 auto;
+        }
+
+        nav.scrolled .logo-img {
+            display: none;
+        }
+
+        nav.scrolled .logo::after {
+            content: "PHYGITAL";
         }
 
         .nav-menu a {
@@ -230,9 +250,20 @@
         footer {
             background-color: var(--white);
             color: var(--text-light);
-            text-align: right;
-            padding: 25px 8%;
-            margin-top: 0;
+            text-align: center;
+            padding: 60px 8%;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        footer .logo-footer {
+            margin-bottom: 25px;
+        }
+
+        footer .logo-footer img {
+            height: 226px;
+            opacity: 0.7;
+            display: block;
+            margin: 0 auto;
         }
 
         footer p {
@@ -304,7 +335,9 @@
 <body>
 
 <nav id="main-nav">
-    <a href="#" class="logo">PHYGITAL</a>
+    <a href="#" class="logo">
+        <img src="resource/logo.png" alt="PHYGITAL" class="logo-img">
+    </a>
     <div class="nav-menu">
         <a href="#founder">Founder</a>
         <a href="#servicos">Serviços</a>
@@ -321,7 +354,7 @@
             <span class="highlight">Multiplique</span> seu Faturamento com a Metodologia que Transformou os <span class="highlight">Gigantes do Varejo</span>
         </h1>
         <p style="max-width: 600px; margin: 0 auto 35px; opacity: 0.95; font-size: 1.1rem; font-weight: 400; line-height: 1.6;">
-            A estratégia que levou Havan, Araujo, Indiana e Colcci ao TOP do varejo agora está disponível para você.
+            A estratégia que escalou o e-commerce da Havan, Drogaria Araujo, Supermercado Angeloni, Itatiaia Móveis, e Colcci, agora está disponível para você.
         </p>
         <a href="https://wa.me/5531982489239?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20tenho%20interesse%20na%20consultoria%20estrat%C3%A9gica%20para%20e-commerce" target="_blank" class="btn-call" style="padding: 18px 45px; font-size: 0.9rem; background: linear-gradient(135deg, #b19cd9, #9b7bc4);">Quero escalar meu negócio</a>
     </div>
@@ -337,7 +370,7 @@
                 <div class="founder-bio">
                     <p>Sou especialista em E-commerce com mais de 12 anos de experiência, tendo atuado em várias empresas no setor de varejo e indústria, em empresas nacionais de grande porte, nos segmentos Farma, Moda, Beleza, Supermercado, Eletrônicos, Eletrodomésticos, Telefonia e Decoração.</p>
                     <p>Durante esse período atuei nos mais diversos canais B2C e D2C (site, aplicativo, WhatsApp e televendas) B2B (Site) e Marketplace In e Out, em diferentes e complexos ecossistemas. Destaquei-me pela capacidade de formar e liderar equipes diversas, contribuindo consistentemente para metas desafiadoras.</p>
-                    <p>Conduzi projetos de migração de plataforma até o go-live, resultando em 50% de crescimento na taxa de conversão. Fui indicada por duas vezes pela ABCOMM na categoria profissional de E-commerce.</p>
+                    <p>Fui indicada por duas vezes pela ABCOMM na categoria profissional de E-commerce.</p>
                 </div>
                 <div class="contact-founder">
                     <a href="mailto:rubiana@phygitalproconsult.com.br">rubiana@phygitalproconsult.com.br</a>
@@ -347,7 +380,7 @@
         </div>
 
         <div class="logo-slider">
-            <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-light); margin-bottom: 20px; text-align: center;">Empresas atendidas e parceiros estratégicos</p>
+            <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-light); margin-bottom: 20px; text-align: center;">Empresas</p>
             <div class="logo-track">
                 <div class="logo-item"><img src="resource/logoindiana.jpg" alt="Indiana"></div>
                 <div class="logo-item"><img src="resource/logoaraujo.jpeg" alt="Araujo"></div>
@@ -375,7 +408,7 @@
             <span class="accent">Consultoria Estratégica</span>
             <h2 style="font-size: 2.8rem; font-weight: 400; color: var(--deep-purple);">Estruturamos e Escalamos seu E-commerce com Segurança, Competitividade e Resultados</h2>
             <p style="margin-bottom: 30px; font-size: 1.1rem; color: var(--text-light);">
-                Orientamos empresas de varejo a estruturar seu e-commerce, acelerando suas vendas e eliminando desperdícios de tempo e recursos.
+                Orientamos empresas de varejo e indústria.
             </p>
             <div class="grid-cards">
                 <div class="card">
@@ -458,7 +491,9 @@
 </section>
 
 <footer>
-    <p>Feito com ❤️ por Edson Bitarães</p>
+    <div class="logo-footer">
+        <img src="resource/logo.png" alt="PHYGITAL">
+    </div>
 </footer>
 
 <!-- Urgency Icon -->
