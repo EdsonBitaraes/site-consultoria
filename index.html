@@ -299,134 +299,6 @@
                 box-shadow: 0 4px 25px rgba(37, 211, 102, 0.7);
             }
         }
-
-        /* --- MODAL --- */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(5px);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-            opacity: 1;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 45px;
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-            position: relative;
-            border-radius: 8px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            color: var(--text-light);
-            cursor: pointer;
-            transition: 0.3s;
-            line-height: 1;
-        }
-
-        .modal-close:hover {
-            color: var(--deep-purple);
-        }
-
-        .modal-badge {
-            display: inline-block;
-            background: var(--accent-lilac);
-            color: white;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-        }
-
-        .modal-content h3 {
-            color: var(--deep-purple);
-            font-size: 1.6rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            line-height: 1.3;
-        }
-
-        .modal-content p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        .modal-btn {
-            display: inline-block;
-            padding: 16px 40px;
-            background: var(--accent-lilac);
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 4px;
-            transition: 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .modal-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(177, 156, 217, 0.3);
-        }
-
-        .modal-footer {
-            margin-top: 15px;
-            font-size: 0.75rem;
-            color: var(--text-light);
-            opacity: 0.7;
-        }
-
-        @media (max-width: 968px) {
-            .urgency-icon {
-                width: 55px;
-                height: 55px;
-                bottom: 20px;
-                right: 20px;
-            }
-
-            .urgency-icon svg {
-                width: 26px;
-                height: 26px;
-            }
-
-            .modal-content {
-                padding: 35px 25px;
-                margin: 20px;
-            }
-
-            .modal-content h3 {
-                font-size: 1.4rem;
-            }
-        }
     </style>
 </head>
 <body>
@@ -451,7 +323,7 @@
         <p style="max-width: 600px; margin: 0 auto 35px; opacity: 0.95; font-size: 1.1rem; font-weight: 400; line-height: 1.6;">
             A estratégia que levou Havan, Araujo, Indiana e Colcci ao TOP do varejo agora está disponível para você.
         </p>
-        <a href="https://wa.me/5531982489239" target="_blank" class="btn-call" style="padding: 18px 45px; font-size: 0.9rem; background: linear-gradient(135deg, #b19cd9, #9b7bc4);">Quero escalar meu negócio</a>
+        <a href="https://wa.me/5531982489239?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20tenho%20interesse%20na%20consultoria%20estrat%C3%A9gica%20para%20e-commerce" target="_blank" class="btn-call" style="padding: 18px 45px; font-size: 0.9rem; background: linear-gradient(135deg, #b19cd9, #9b7bc4);">Quero escalar meu negócio</a>
     </div>
 </section>
 
@@ -469,7 +341,7 @@
                 </div>
                 <div class="contact-founder">
                     <a href="mailto:rubiana@phygitalproconsult.com.br">rubiana@phygitalproconsult.com.br</a>
-                    <a href="https://wa.me/5531982489239" target="_blank">Whatsapp: (31) 98248-9239</a>
+                    <a href="https://wa.me/5531982489239?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20tenho%20interesse%20na%20consultoria%20estrat%C3%A9gica%20para%20e-commerce" target="_blank">Whatsapp: (31) 98248-9239</a>
                 </div>
             </div>
         </div>
@@ -581,7 +453,7 @@
         <p class="text-light" style="margin-bottom: 40px; font-size: 1.1rem; opacity: 0.8;">
             Pare de deixar dinheiro na mesa. Comece a acelerar suas vendas e eliminar desperdícios hoje.
         </p>
-        <a href="https://wa.me/5531982489239" target="_blank" class="btn-call">Quero escalar meu negócio</a>
+        <a href="https://wa.me/5531982489239?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20tenho%20interesse%20na%20consultoria%20estrat%C3%A9gica%20para%20e-commerce" target="_blank" class="btn-call">Quero escalar meu negócio</a>
     </div>
 </section>
 
@@ -597,19 +469,7 @@
     <div class="notification-dot"></div>
 </div>
 
-<!-- Modal -->
-<div class="modal-overlay" id="urgencyModal">
-    <div class="modal-content">
-        <button class="modal-close" id="closeModal">&times;</button>
-        <span class="modal-badge">Últimas Vagas</span>
-        <h3>1º Trimestre 2026 está quase esgotado</h3>
-        <p>
-            Não perca a oportunidade de transformar sua operação com a metodologia que transformou os gigantes do varejo. Restam apenas <strong>3 vagas</strong> para o próximo trimestre.
-        </p>
-        <a href="https://wa.me/5531982489239" target="_blank" class="modal-btn">Garantir Minha Vaga Agora</a>
-        <p class="modal-footer">Transforme sua operação com resultados comprovados</p>
-    </div>
-</div>
+
 
 <script>
     // Parallax Effect
@@ -637,33 +497,10 @@
 
     document.querySelectorAll('section').forEach(section => observer.observe(section));
 
-    // Modal Logic
-    const urgencyIcon = document.getElementById('urgencyIcon');
-    const modal = document.getElementById('urgencyModal');
-    const closeModal = document.getElementById('closeModal');
-
     // Open WhatsApp on icon click
+    const urgencyIcon = document.getElementById('urgencyIcon');
     urgencyIcon.addEventListener('click', () => {
-        window.open('https://wa.me/5531982489239', '_blank');
-    });
-
-    // Close modal on X click
-    closeModal.addEventListener('click', () => {
-        modal.classList.remove('active');
-    });
-
-    // Close modal on overlay click
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
-        }
-    });
-
-    // Close modal on ESC key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-            modal.classList.remove('active');
-        }
+        window.open('https://wa.me/5531982489239?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20tenho%20interesse%20na%20consultoria%20estrat%C3%A9gica%20para%20e-commerce', '_blank');
     });
 </script>
 </body>
