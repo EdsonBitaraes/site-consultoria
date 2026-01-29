@@ -342,42 +342,49 @@
         .plano-item { border-left: 2px solid var(--accent-lilac); padding-left: 20px; margin-bottom: 25px; }
 
         .btn-call {
-            display: inline-block; padding: 20px 50px; background: linear-gradient(135deg, #2a1f35, #1a1423);
+            display: inline-block; padding: 20px 50px; background: linear-gradient(135deg, #8b5cf6, #7c3aed);
             color: white; text-decoration: none; letter-spacing: 2px;
-            font-weight: 700; text-transform: uppercase; border-radius: 4px; transition: all 0.4s ease;
-            border: none; cursor: pointer;
+            font-weight: 700; text-transform: uppercase; border-radius: 8px; 
+            cursor: pointer;
             position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(42, 31, 53, 0.3);
-        }
-        
-        .btn-call::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.3), 
-                transparent
-            );
-            transition: left 0.6s ease;
-        }
-        
-        .btn-call:hover::before {
-            left: 100%;
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+            animation: float 3s ease-in-out infinite, subtle-shake 4s ease-in-out infinite;
+            transition: all 0.3s ease;
         }
         
         .btn-call:hover { 
-            transform: translateY(-3px) scale(1.05); 
-            box-shadow: 0 12px 25px rgba(42, 31, 53, 0.5); 
-            background: linear-gradient(135deg, #3a2945, #1a1423);
+            transform: translateY(-2px); 
+            box-shadow: 0 12px 35px rgba(139, 92, 246, 0.4); 
+            background: linear-gradient(135deg, #7c3aed, #6d28d9);
         }
         
         .btn-call:active {
-            transform: translateY(-1px) scale(1.02);
+            transform: translateY(-1px);
+        }
+        
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px); 
+            }
+            25% { 
+                transform: translateY(-8px); 
+            }
+            75% { 
+                transform: translateY(-3px); 
+            }
+        }
+        
+        @keyframes subtle-shake {
+            0%, 100% { transform: translateX(0); }
+            10% { transform: translateX(-2px); }
+            20% { transform: translateX(2px); }
+            30% { transform: translateX(-2px); }
+            40% { transform: translateX(2px); }
+            50% { transform: translateX(-1px); }
+            60% { transform: translateX(1px); }
+            70% { transform: translateX(-1px); }
+            80% { transform: translateX(1px); }
+            90% { transform: translateX(-0.5px); }
         }
 
         /* --- RESPONSIVIDADE (MOBILE) --- */
