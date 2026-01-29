@@ -342,12 +342,43 @@
         .plano-item { border-left: 2px solid var(--accent-lilac); padding-left: 20px; margin-bottom: 25px; }
 
         .btn-call {
-            display: inline-block; padding: 20px 50px; background: #2a1f35;
+            display: inline-block; padding: 20px 50px; background: linear-gradient(135deg, #2a1f35, #1a1423);
             color: white; text-decoration: none; letter-spacing: 2px;
-            font-weight: 600; text-transform: uppercase; border-radius: 4px; transition: 0.3s;
+            font-weight: 700; text-transform: uppercase; border-radius: 4px; transition: all 0.4s ease;
             border: none; cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(42, 31, 53, 0.3);
         }
-        .btn-call:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(42, 31, 53, 0.4); }
+        
+        .btn-call::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.3), 
+                transparent
+            );
+            transition: left 0.6s ease;
+        }
+        
+        .btn-call:hover::before {
+            left: 100%;
+        }
+        
+        .btn-call:hover { 
+            transform: translateY(-3px) scale(1.05); 
+            box-shadow: 0 12px 25px rgba(42, 31, 53, 0.5); 
+            background: linear-gradient(135deg, #3a2945, #1a1423);
+        }
+        
+        .btn-call:active {
+            transform: translateY(-1px) scale(1.02);
+        }
 
         /* --- RESPONSIVIDADE (MOBILE) --- */
         @media (max-width: 968px) {
@@ -567,7 +598,7 @@
         <p style="max-width: 600px; margin: 0 auto 35px; opacity: 0.95; font-size: 1.1rem; font-weight: 400; line-height: 1.6;">
             A estratégia que escalou o e-commerce da Havan, Drogaria Araujo, Supermercado Angeloni, Itatiaia Móveis, e Colcci, agora está disponível para você.
         </p>
-        <a href="https://wa.me/5531982489239?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20tenho%20interesse%20na%20consultoria%20estrat%C3%A9gica%20para%20e-commerce" target="_blank" class="btn-call" style="padding: 18px 45px; font-size: 0.9rem; background: linear-gradient(135deg, #b19cd9, #9b7bc4);">Quero escalar meu negócio</a>
+        <a href="https://wa.me/5531982489239?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20tenho%20interesse%20na%20consultoria%20estrat%C3%A9gica%20para%20e-commerce" target="_blank" class="btn-call">Quero escalar meu negócio</a>
     </div>
 </section>
 
